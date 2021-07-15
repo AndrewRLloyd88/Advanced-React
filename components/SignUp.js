@@ -49,8 +49,8 @@ export default function SignUp() {
             In!
           </p>
         )}
-        <label htmlFor="email">
-          Email
+        <label htmlFor="name">
+          Name
           <input
             type="text"
             name="name"
