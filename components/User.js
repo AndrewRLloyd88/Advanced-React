@@ -8,7 +8,7 @@ export const CURRENT_USER_QUERY = gql`
         id
         email
         name
-        # TODOL Query the cart once we have it
+        # TODO: Query the cart once we have it
       }
     }
   }
