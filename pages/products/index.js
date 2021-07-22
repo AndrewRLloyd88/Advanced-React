@@ -4,7 +4,7 @@ import Pagination from '../../components/Pagination';
 
 export default function ProductPage() {
   const { query } = useRouter();
-  console.log(query);
+  // console.log(query);
   const page = parseInt(query.page);
   return (
     <div>
