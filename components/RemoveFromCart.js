@@ -20,9 +20,22 @@ const REMOVE_FROM_CART_MUTATION = gql`
   }
 `;
 
+// access to the apollo cache as well as id
+function update(cache, payload) {
+  cache.evict(cache.identify(payload.data.deleteCartItem));
+}
+
 export default function RemoveFromCart({ id }) {
   const [removeFromCart, { loading }] = useMutation(REMOVE_FROM_CART_MUTATION, {
     variables: { id },
+    update,
+    // does not work yet because it re-runs all the queries on the page un-necessarily
+    // optimisticResponse: {
+    //   deleteCartItem: {
+    //     __typename: 'CartItem',
+    //     id,
+    //   },
+    // },
   });
   return (
     <BigButton
